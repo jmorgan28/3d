@@ -22,6 +22,8 @@ int main(int argc, char **argv) {
   /* printf("\n"); */
   /* print_matrix( make_hermite() ); */
 
+  argv[1] = "script";
+  argc = 2;
   if ( argc == 2 )
     parse_file( argv[1], transform, edges, s );
   else
