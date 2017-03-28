@@ -25,14 +25,22 @@
 void add_box( struct matrix * edges,
 	      double x, double y, double z,
 	      double w, double h, double d ) {
-  add_point(edges,x,y,z);
-  add_point(edges,x + w,y,z);
+  add_point(edges,x ,y,z);
+  add_point(edges,x +4,y,z);
+  add_point(edges,x + w ,y,z);
+  add_point(edges,x + w +4,y,z);
   add_point(edges,x,y - h,z);
+  add_point(edges,x +4,y - h,z);
   add_point(edges,x + w,y - h,z);
+  add_point(edges,x + w + 4,y - h,z);
   add_point(edges,x,y,z -d);
+  add_point(edges,x +4,y,z -d);
   add_point(edges,x + w,y,z-d);
+  add_point(edges,x + w+4,y,z-d);
   add_point(edges,x,y - h,z-d);
+  add_point(edges,x+4,y - h,z-d);
   add_point(edges,x + w,y - h,z-d);
+  add_point(edges,x + w+4,y - h,z-d);
   
 }
 
