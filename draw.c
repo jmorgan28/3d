@@ -135,9 +135,9 @@ void generate_torus( struct matrix * edges, double cx, double cy, double cz,
   for (f=step; f <= 1.00001; f+= step) {
     for (t=step; t <= 1.00001; t+= step) {
       
-      x = cos(M_PI * f *2) * (r1 * cos(M_PI * t) + r2) + cx;
-      y = r1 * sin(M_PI * t)+ cy;
-      z = -1 * sin(M_PI * f*2) * (r1 * cos(M_PI * t) + r2) + cz;
+      x = cos(M_PI * f *2) * (r1 * cos(M_PI * t *2) + r2) + cx;
+      y = r1 * sin(M_PI * t *2)+ cy;
+      z = -1 * sin(M_PI * f*2) * (r1 * cos(M_PI * t *2) + r2) + cz;
 
       add_edge(edges, x, y, z, x, y, z);
     }
