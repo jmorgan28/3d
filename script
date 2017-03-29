@@ -51,7 +51,6 @@ apply
 display
 #clear the edge matrix, test torus
 clear
-ident
 torus
 0 0 0 25 150
 display
@@ -87,3 +86,4 @@ move
 250 250 0
 apply
 display
+
