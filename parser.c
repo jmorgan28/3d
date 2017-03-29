@@ -156,6 +156,12 @@ void parse_file ( char * filename,
       skip = 1;
       prev = 15;
     }
+    if(strcmp("clear", line) == 0){
+      clear_screen(s);
+      edges = new_matrix(4,4);
+      skip = 1;
+      prev = 16;
+    }
     if(strcmp("quit", line) == 0){
       skip = 1;
       prev = 9;
@@ -266,6 +272,9 @@ void parse_file ( char * filename,
 	int r2 = atoi(strsep(&a, " "));
 	generate_torus(edges,x,y,z,r1,r2,.01);
       }
+      //if(prev == 16){
+	
+      //}
     }
   }
 }

@@ -52,7 +52,6 @@ display
 #clear the edge matrix, test torus
 clear
 ident
-clear
 torus
 0 0 0 25 150
 display
