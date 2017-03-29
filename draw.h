@@ -17,7 +17,7 @@ void generate_sphere(struct matrix * edges, double cx, double cy, double cz,
 void add_torus( struct matrix * edges, 
 		double cx, double cy, double cz,
 		double r1, double r2, double step );
-struct matrix * generate_torus( double cx, double cy, double cz,
+void generate_torus( struct matrix * edges, double cx, double cy, double cz,
 				double r1, double r2, double step );
 
 //advanced shapes

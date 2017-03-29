@@ -129,9 +129,19 @@ void add_torus( struct matrix * edges,
 	   radii r1 and r2.
 	   Returns a matrix of those points
   ====================*/
-struct matrix * generate_torus( double cx, double cy, double cz,
+void generate_torus( struct matrix * edges, double cx, double cy, double cz,
 				double r1, double r2, double step ) {
-  return NULL;
+  double x, y, z, t,f;
+  for (f=step; f <= 1.00001; f+= step) {
+    for (t=step; t <= 1.00001; t+= step) {
+      
+      x = cos(M_PI * f *2) * (r1 * cos(M_PI * t) + r2) + cx;
+      y = r1 * sin(M_PI * t)+ cy;
+      z = -1 * sin(M_PI * f*2) * (r1 * cos(M_PI * t) + r2) + cz;
+
+      add_edge(edges, x, y, z, x, y, z);
+    }
+  }
 }
 
 /*======== void add_circle() ==========
