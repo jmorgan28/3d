@@ -62,9 +62,9 @@ void add_box( struct matrix * edges,
 void add_sphere( struct matrix * edges, 
 		 double cx, double cy, double cz,
 		 double r, double step ) {
-  return (generate_sphere ;
+  return;
 }
-}
+
 
 /*======== void generate_sphere() ==========
   Inputs:   struct matrix * points
@@ -78,17 +78,16 @@ void add_sphere( struct matrix * edges,
 	   radius r.
 	   Returns a matrix of those points
   ====================*/
-void struct matrix * generate_sphere(double cx, double cy, double cz,
+void generate_sphere(struct matrix * edges, double cx, double cy, double cz,
 				double r, double step ) {
     
   double x, y, z, t,f;
-
   for (f=step; f <= 1.00001; f+= step) {
     for (t=step; t <= 1.00001; t+= step) {
       
       x = r * cos(M_PI * t) + cx;
       y = r * sin(M_PI * t) * cos(2 * M_PI * f)+ cy;
-      z = r * sin(M_PI * t) * sin(2 * M_PI * f)+ cy;
+      z = r * sin(M_PI * t) * sin(2 * M_PI * f)+ cz;
 
       add_edge(edges, x, y, z, x, y, z);
     }

@@ -148,6 +148,10 @@ void parse_file ( char * filename,
       skip = 1;
       prev = 13;
     }
+    if(strcmp("sphere", line) == 0){
+      skip = 1;
+      prev = 14;
+    }
     if(strcmp("quit", line) == 0){
       skip = 1;
       prev = 9;
@@ -240,6 +244,15 @@ void parse_file ( char * filename,
 	int h = atoi(strsep(&a, " "));
 	int d = atoi(strsep(&a, " "));
 	add_box(edges,x,y,z,w,h,d);
+      }
+      if(prev == 14){
+	printf("okay?\n");
+	char * a = line;
+	int x = atoi(strsep(&a, " "));
+	int y = atoi(strsep(&a, " "));
+	int z = atoi(strsep(&a, " "));
+	int r = atoi(strsep(&a, " "));
+	generate_sphere(edges,x,y,z,r,.01);
       }
     }
   }
